@@ -1,0 +1,142 @@
+@charset "utf-8";
+
+
+/*** HEADER ********************************************************************************************/
+
+header {
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+    border-bottom: 1px solid #eee;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999; /* position 속성값이 들어가 있는 전제하에 z-index 속성을 넣어줘야 적용됨!!! */
+}
+header a { /* header 하위에 모든 a 태그 선택! */
+    color: #333;
+}
+
+header .header-top {
+    width: 100%;
+    background-color: lightgray;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+}
+header .header-top ul {
+    width: 1280px;
+    margin: 0 auto;
+    text-align: right;
+}
+header .header-top ul li {
+    float: none;
+    display: inline-block;
+    margin-left: 10px;
+
+    /* outline: 1px solid blue; */
+}
+header .header-top ul li:last-child a {
+    width: 60px;
+    height: 40px;
+
+    /* background-color: rgb(47,28,17);
+    background-image: url(../img/ico_user_info_line.png);
+    background-repeat: no-repeat;
+    background-position: center; */
+
+    background: rgb(47,28,17) url(../img/ico_user_info_line.png) no-repeat center;
+    
+    text-indent: -9999px;
+    /* ul태그의 text-align 속성 (문단정렬-오른쪽)때문에 text-indent 값을 넣어도 오른쪽으로 붙는 형상이 일어났음!! */
+    text-align: left;  
+}
+
+
+header .header-bottom {
+    width: 1280px;
+    height: 100px;
+    margin: 0 auto;
+
+    /* outline: 2px solid blue; */
+}
+
+header .header-bottom .logo {
+    /* outline: 2px solid red; */
+
+    float: left;
+    /* 너비값과 달리 높이값은 비율(%)로 적용할 때 부모요소(상위요소 X)의 높이가 지정되어있는지 확인필수!!! */
+    height: 100%; 
+    padding: 15px 0;
+    box-sizing: border-box;
+
+    margin-right: 50px;
+}
+header .header-bottom .logo img {
+    height: 70px;
+    display: block;
+}
+
+
+header .header-bottom .gnb {
+    /* background-color: lightblue; */
+
+    float: left;
+}
+header .header-bottom .gnb ul li {
+    /* outline: 2px solid #0f0; */
+
+    margin: 0 20px;
+}
+header .header-bottom .gnb ul li a {
+    color: rgb(47,28,17);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 100px;
+}
+
+/* 활성화 GNB 메뉴 - the coffee bean */
+header .header-bottom .gnb ul li.active a {
+    color: rgb(207,102,26);
+}
+
+header .header-bottom .gnb ul li a:hover {
+    color: rgb(207,102,26);
+}
+
+
+header .header-bottom .search {
+    /* background-color: lightpink; */
+
+    float: right;
+    height: 100%;
+}
+.search input {
+    height: 30px;
+    border: 0; /* = border: none; */
+    outline: 0;
+    margin-top: 35px;
+
+    vertical-align: middle;
+}
+.search input[type="text"] {
+    /* outline: 2px solid #0f0; */
+
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+}
+.search input[type="submit"] {
+    /* outline: 1px solid blue; */
+
+    background-color: transparent;
+    background-image: url(../img/ico_search.png);
+    background-repeat: no-repeat;
+    background-position: right;
+
+    width: 24px;
+
+    font-size: 0; /* = color: transparent; (html의 "검색" 텍스트를 없애는 방법) */
+    cursor: pointer;
+}
